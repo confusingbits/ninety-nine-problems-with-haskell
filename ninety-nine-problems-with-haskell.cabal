@@ -25,7 +25,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Problems
   other-modules:
       Paths_ninety_nine_problems_with_haskell
   hs-source-dirs:
