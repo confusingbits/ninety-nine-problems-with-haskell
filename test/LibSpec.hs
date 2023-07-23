@@ -39,3 +39,13 @@ spec = do
         problem5 "A man, a plan, a canal, panama!" `shouldBe` "!amanap ,lanac a ,nalp a ,nam A"
       it "should return [4,3,2,1]" $ do
         problem5 [1, 2, 3, 4] `shouldBe` [4, 3, 2, 1]
+  describe "problem6" $ do
+    context "When given [1,2,3]" $ do
+      it "should return False" $ do
+        problem6 [1, 2, 3] `shouldBe` False
+    context "When given 'madamimadam'" $ do
+      it "should return True" $ do
+        problem6 "madamimadam" `shouldBe` True
+    context "When given [1,2,4,8,16,8,4,2,1]" $ do
+      it "should return True" $ do
+        problem6 [1, 2, 4, 8, 16, 8, 4, 2, 1] `shouldBe` True

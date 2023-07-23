@@ -13,3 +13,5 @@ problem3 (_ : as) n = problem3 as (n - 1)
 problem4 a = length a
 
 problem5 a = reverse a
+
+problem6 a = a == reverse a
