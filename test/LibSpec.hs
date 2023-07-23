@@ -26,3 +26,10 @@ spec = do
     context "When given 'haskell'" $ do
       it "should return 'e'" $ do
         problem3 "haskell" 5 `shouldBe` 'e'
+  describe "problem4" $ do
+    context "When given [123, 456, 789]" $ do
+      it "should return 3" $ do
+        problem4 [123, 456, 789] `shouldBe` 3
+    context "When given 'Hello, world!'" $ do
+      it "should return 13" $ do
+        problem4 "Hello, world!" `shouldBe` 13
