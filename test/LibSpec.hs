@@ -19,3 +19,10 @@ spec = do
     context "When given ['x','y','z']" $ do
       it "should return 'y'" $ do
         problem2 ['x','y','z'] `shouldBe` 'y'
+  describe "problem3" $ do
+    context "When given [1,2,3] and 2" $ do
+      it "should return 2" $ do
+        problem3 [1,2,3] 2 `shouldBe` 2
+    context "When given 'haskell'" $ do
+      it "should return 'e'" $ do
+        problem3 "haskell" 5 `shouldBe` 'e'
