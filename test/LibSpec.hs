@@ -49,3 +49,13 @@ spec = do
     context "When given [1,2,4,8,16,8,4,2,1]" $ do
       it "should return True" $ do
         problem6 [1, 2, 4, 8, 16, 8, 4, 2, 1] `shouldBe` True
+  describe "problem7" $ do
+    context "When given (Elem 5)" $ do
+      it "should return [5]" $ do
+        problem7 (Elem 5) `shouldBe` [5]
+    context "When given (List [Elem 1, List [Elem 2, List [Elem 3, Elem 4], Elem 5]])" $ do
+      it "should return [1,2,3,4,5]" $ do
+        problem7 (List [Elem 1, List [Elem 2, List [Elem 3, Elem 4], Elem 5]]) `shouldBe` [1,2,3,4,5]
+    context "When given (List [])" $ do
+      it "should return []" $ do
+        problem7 (List []) `shouldBe` []
