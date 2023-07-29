@@ -58,4 +58,4 @@ spec = do
         problem7 (List [Elem 1, List [Elem 2, List [Elem 3, Elem 4], Elem 5]]) `shouldBe` [1,2,3,4,5]
     context "When given (List [])" $ do
       it "should return []" $ do
-        problem7 (List []) `shouldBe` []
+        problem7 (List []) `shouldBe` ([] :: [Int]) -- idk why this needs to be specified
