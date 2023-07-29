@@ -59,3 +59,7 @@ spec = do
     context "When given (List [])" $ do
       it "should return []" $ do
         problem7 (List []) `shouldBe` ([] :: [Int]) -- idk why this needs to be specified
+  describe "problem8" $ do
+    context "When given 'aaaabccaadeeee'" $ do
+      it "should return 'abcade'" $ do
+        problem8 "aaaabccaadeeee" `shouldBe` "abcade" 

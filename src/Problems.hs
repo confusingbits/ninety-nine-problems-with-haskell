@@ -23,6 +23,17 @@ data NestedList a = Elem a | List [NestedList a] deriving (Show, Eq)
 
 -- why does this require a constraint or cast at the caller? (Num a =>)
 problem7 :: NestedList a -> [a]
-problem7 (Elem a   )   = [a]
-problem7 (List (x:xs)) = problem7 x ++ problem7 (List xs) -- i don't understand the List xs part
-problem7 (List [])     = []
+problem7 (Elem a) = [a]
+problem7 (List (x : xs)) = problem7 x ++ problem7 (List xs) -- i don't understand the List xs part
+problem7 (List []) = []
+
+dedup :: Char -> String -> String
+dedup a "" = [a]
+dedup a acc =
+  let l = last acc
+   in if l == a
+        then acc
+        else acc ++ [a]
+
+problem8 :: String -> String
+problem8 a = reverse $ foldr dedup "" a
