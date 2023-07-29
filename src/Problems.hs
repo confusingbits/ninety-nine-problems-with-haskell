@@ -1,4 +1,5 @@
 module Problems where
+import Data.List
 
 someFunc :: IO ()
 someFunc = putStrLn "someFunc"
@@ -56,3 +57,6 @@ combine c acc =
 
 problem9 :: String -> [String]
 problem9 a = reverse $ foldr combine [] a
+
+problem10 :: String -> [(Int, Char)]
+problem10 a = map (\b -> (length b, head b)) $ group a
