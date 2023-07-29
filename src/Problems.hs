@@ -37,3 +37,22 @@ dedup a acc =
 
 problem8 :: String -> String
 problem8 a = reverse $ foldr dedup "" a
+
+combine :: Char -> [String] -> [String]
+combine c [] = [[c]]
+combine c acc =
+  let
+    -- [['a'], ['b']]
+    r = reverse acc -- [['b'], ['a']]
+    x = head r -- ['b']
+    xs = tail r -- [['a']]
+    contained = elem c x
+    -- if the last array of the list contains the char
+   in if contained
+        -- append the last array
+        then reverse $ (x ++ [c]) : xs
+        -- else create a new array with the char
+        else reverse $ [c] : r -- ['a', 'b', 'c']
+
+problem9 :: String -> [String]
+problem9 a = reverse $ foldr combine [] a

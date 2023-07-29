@@ -55,11 +55,17 @@ spec = do
         problem7 (Elem 5) `shouldBe` [5]
     context "When given (List [Elem 1, List [Elem 2, List [Elem 3, Elem 4], Elem 5]])" $ do
       it "should return [1,2,3,4,5]" $ do
-        problem7 (List [Elem 1, List [Elem 2, List [Elem 3, Elem 4], Elem 5]]) `shouldBe` [1,2,3,4,5]
+        problem7 (List [Elem 1, List [Elem 2, List [Elem 3, Elem 4], Elem 5]]) `shouldBe` [1, 2, 3, 4, 5]
     context "When given (List [])" $ do
       it "should return []" $ do
         problem7 (List []) `shouldBe` ([] :: [Int]) -- idk why this needs to be specified
   describe "problem8" $ do
     context "When given 'aaaabccaadeeee'" $ do
       it "should return 'abcade'" $ do
-        problem8 "aaaabccaadeeee" `shouldBe` "abcade" 
+        problem8 "aaaabccaadeeee" `shouldBe` "abcade"
+  describe "problem9" $ do
+    context "When given ['a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e']" $ do
+      it "should return ['aaaa','b','cc','aa','d','eeee']" $ do
+        problem9
+          ['a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e']
+          `shouldBe` ["aaaa", "b", "cc", "aa", "d", "eeee"]
