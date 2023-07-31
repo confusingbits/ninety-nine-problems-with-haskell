@@ -1,4 +1,6 @@
 module Problems where
+
+import Data.Function ((&))
 import Data.List
 
 someFunc :: IO ()
@@ -42,21 +44,29 @@ problem8 a = reverse $ foldr dedup "" a
 combine :: Char -> [String] -> [String]
 combine c [] = [[c]]
 combine c acc =
-  let
-    -- [['a'], ['b']]
-    r = reverse acc -- [['b'], ['a']]
-    x = head r -- ['b']
-    xs = tail r -- [['a']]
-    contained = elem c x
-    -- if the last array of the list contains the char
-   in if contained
-        -- append the last array
-        then reverse $ (x ++ [c]) : xs
-        -- else create a new array with the char
-        else reverse $ [c] : r -- ['a', 'b', 'c']
+  let -- [['a'], ['b']]
+      r = reverse acc -- [['b'], ['a']]
+      x = head r -- ['b']
+      xs = tail r -- [['a']]
+      contained = elem c x
+   in -- if the last array of the list contains the char
+      if contained
+        then -- append the last array
+          reverse $ (x ++ [c]) : xs
+        else -- else create a new array with the char
+          reverse $ [c] : r -- ['a', 'b', 'c']
 
 problem9 :: String -> [String]
 problem9 a = reverse $ foldr combine [] a
 
 problem10 :: String -> [(Int, Char)]
 problem10 a = map (\b -> (length b, head b)) $ group a
+
+data Multiple a = Multiple Int a | Single a deriving (Show, Eq)
+
+mapMult :: [Char] -> Multiple Char
+mapMult [x] = Single x
+mapMult xs = Multiple (length xs) (head xs)
+
+problem11 :: [Char] -> [Multiple Char]
+problem11 a = group a & map mapMult -- oo, & is the pipe (|> or |) operator in haskell

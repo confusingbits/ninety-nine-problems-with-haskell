@@ -73,3 +73,7 @@ spec = do
     context "When given 'aaaabccaadeeee'" $ do
       it "should return [(4,'a'),(1,'b'),(2,'c'),(2,'a'),(1,'d'),(4,'e')]" $ do
         problem10 "aaaabccaadeeee" `shouldBe` [(4, 'a'), (1, 'b'), (2, 'c'), (2, 'a'), (1, 'd'), (4, 'e')]
+  describe "problem11" $ do
+    context "When given 'aaaabccaadeeee'" $ do
+      it "should return [Multiple 4 'a',Single 'b',Multiple 2 'c', Multiple 2 'a',Single 'd',Multiple 4 'e']" $ do
+        problem11 "aaaabccaadeeee" `shouldBe` [Multiple 4 'a', Single 'b', Multiple 2 'c', Multiple 2 'a', Single 'd', Multiple 4 'e']
