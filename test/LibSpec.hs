@@ -77,3 +77,7 @@ spec = do
     context "When given 'aaaabccaadeeee'" $ do
       it "should return [Multiple 4 'a',Single 'b',Multiple 2 'c', Multiple 2 'a',Single 'd',Multiple 4 'e']" $ do
         problem11 "aaaabccaadeeee" `shouldBe` [Multiple 4 'a', Single 'b', Multiple 2 'c', Multiple 2 'a', Single 'd', Multiple 4 'e']
+  describe "problem12" $ do
+    context "When given [Multiple 4 'a', Single 'b', Multiple 2 'c', Multiple 2 'a',Single 'd',Multiple 4 'e']" $ do
+      it "should return 'aaaabccaadeeee'" $ do
+        problem12 [Multiple 4 'a', Single 'b', Multiple 2 'c', Multiple 2 'a', Single 'd', Multiple 4 'e'] `shouldBe` "aaaabccaadeeee"

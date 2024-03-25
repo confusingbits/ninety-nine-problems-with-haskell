@@ -70,3 +70,16 @@ mapMult xs = Multiple (length xs) (head xs)
 
 problem11 :: [Char] -> [Multiple Char]
 problem11 a = group a & map mapMult -- oo, & is the pipe (|> or |) operator in haskell
+
+problem12 :: [Multiple Char] -> [Char]
+problem12 (m:mc) =
+   if mc == [] then
+    case m of 
+       Single c -> [c]
+       Multiple n c -> repeat c & take n
+   else
+   case m of
+      Single c -> c:problem12 mc
+      Multiple n c -> repeat c & take n & (++) $ problem12 mc
+
+
