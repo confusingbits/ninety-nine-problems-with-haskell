@@ -82,4 +82,9 @@ problem12 (m:mc) =
       Single c -> c:problem12 mc
       Multiple n c -> repeat c & take n & (++) $ problem12 mc
 
+problem13 :: [Char] -> [Multiple Char]
+problem13 (m:ms) = mapChar m 
+
+mapChar :: Char -> [Multiple Char]->  Multiple Char
+mapChar c mc = [] 
 
